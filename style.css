@@ -42,7 +42,7 @@ header {
 
 main {
     display:flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
     justify-content: center;
 
 }
@@ -50,7 +50,7 @@ main {
 .movie {
     width: 300px;
     margin: 1em;
-    border-radius: 5px;
+    border-radius: 3px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     background-color: lightgray;
     position: relative;
@@ -70,6 +70,10 @@ main {
     letter-spacing: 0.5px;
 }
 
+.movie-info h3 {
+    margin-top: 0;
+}
+
 .movie-info span {
     background-color: #000;
     padding: 0.25em 0.5em;
@@ -85,4 +89,20 @@ main {
 }
 .movie-info span.red {
     color: red;
+}
+
+.overview {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    padding:2em;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition:transform 0.5s ease-in;
+}
+
+.movie:hover .overview {
+    transform: translateY(0);
 }
