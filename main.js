@@ -115,12 +115,27 @@ function setGenre() {
             }
             console.log(selectedGenre)
             getMovies(API_URL + '&with_genres=' +encodeURI(selectedGenre.join(',')))
+            hightlightSelection()
         })
         tagsEl.append(t);
-
-
     })
 }
+
+function hightlightSelection() {
+    const tags = document.querySelectorAll('.tag');
+    tags.forEach(tag => {
+        tag.classList.remove('highlight')
+    })
+    if(selectedGenre.length != 0) {
+        selectedGenre.forEach(id => {
+            const hightlightedTag = document.getElementById(id);
+            hightlightedTag.classList.add('highlight');
+        })   
+    }
+    
+}
+
+
 
 
 
@@ -130,7 +145,11 @@ function getMovies(url) {
 
     fetch(url).then(res => res.json()).then(data => {
         console.log(data.results)
-        showMovies(data.results);
+        if(data.results.length !== 0) {
+            showMovies(data.results);
+        }else{
+            main.innerHTML = '<h1 class="no-results">No Results Found</h1>'
+        }
     })
 }
 
