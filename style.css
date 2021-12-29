@@ -106,3 +106,22 @@ main {
 .movie:hover .overview {
     transform: translateY(0);
 }
+
+/*Genres*/ 
+#tags {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    margin: 1em auto;
+}
+
+.tag {
+    padding: 0.8em;
+    background-color: grey;
+    border-radius: 50px;
+    margin: 0.5em;
+    display: inline-block;
+    cursor: pointer;
+}
