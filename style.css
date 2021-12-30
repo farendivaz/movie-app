@@ -117,11 +117,12 @@ main {
 
 .tag {
     padding: 0.8em;
-    background-color: grey;
-    border-radius: 50px;
+    background-color: #000;
+    border: 2px solid #fff;
     margin: 0.5em;
     display: inline-block;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .tag.highlight {
