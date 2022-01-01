@@ -126,10 +126,34 @@ main {
 }
 
 .tag.highlight {
-    background-color: red;
+    background-color: #e50914;
 }
 
 .no-results{
     color: white;
     padding: 2em;
+}
+
+.pagination {
+    display: flex;
+    margin: 1em 2em;
+    justify-content: center;
+    align-items: center;
+}
+.page {
+    padding: 1em;
+    cursor: pointer;
+    margin: 0.5em;
+}
+
+.page.disabled {
+    cursor: not-allowed;
+    color: grey;
+}
+
+.page.current {
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    font-weight: bold;
 }
