@@ -99,6 +99,7 @@ var nextPage = 2;
 var prevPage = 3;
 var lastUrl = '';
 var totalPages = 100;
+
 var selectedGenre = []
 setGenre();
 function setGenre() {
@@ -203,7 +204,7 @@ function showMovies(data) {
     main.innerHTML = '';
 
     data.forEach(movie => {
-        const {title, poster_path, vote_average, overview} = movie;
+        const {title, poster_path, vote_average, overview, id} = movie;
         const movieEl = document.createElement('div');
         movieEl.classList.add('movie');
         movieEl.innerHTML = `
@@ -213,14 +214,33 @@ function showMovies(data) {
                 <span class="${getColor(vote_average)}">${vote_average}</span>
             </div>
             <div class="overview">
+            
                 <h3>Overview</h3>
                 ${overview}
+                <br/>
+                <button class="know-more" id="${id}">Know More</button>
             </div>
         
         `
 
         main.appendChild(movieEl);
+
+        document.getElementById(id).addEventListener('click', () => {
+            console.log(id)
+            openNav()
+        })
+
     })
+}
+
+/* Open when someone clicks on the span element */
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+  /* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
 }
 
 function getColor(vote) {
