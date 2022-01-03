@@ -184,7 +184,7 @@ main {
   /* Position the content inside the overlay */
 .overlay-content {
     position: relative;
-    top: 25%; /* 25% from the top */
+    top: 10%; /* 25% from the top */
     width: 100%; /* 100% width */
     text-align: center; /* Centered text/links */
     margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
@@ -218,4 +218,45 @@ main {
         top: 15px;
         right: 35px;
     }
+}
+
+.embed.hide {
+    display: none;
+}
+
+.embed.show {
+    display: inline-block;
+}
+
+.arrow {
+    position: absolute;
+    font-size: 2.5rem;
+}
+
+.arrow.left-arrow {
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+}
+
+.arrow.right-arrow {
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+}
+
+.dots {
+    margin-top: 2em;
+}
+
+.dots .dot {
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    font-weight: bold;
+    margin: 0.5em;
+}
+
+.dots .dot.active {
+    border-color: orange;
 }
